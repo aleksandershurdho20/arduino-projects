@@ -1,17 +1,23 @@
-#include <LiquidCrystal.h> 
-int Contrast=75;
- LiquidCrystal lcd(12, 11, 5, 4, 3, 2);  
-
- void setup()
- {
-    analogWrite(6,Contrast);
-     lcd.begin(16, 2);
-  } 
-     void loop()
- { 
-     lcd.setCursor(0, 0);
-     lcd.print("Only Innovative");
-   
-    lcd.setCursor(0, 1);
-     lcd.print("Subscribe");
- }
+const int pin2 = 2;
+const int pin3 = 3;
+const int pin4 = 4;
+const int delayTime = 1000;  
+void setup() {
+  // Set pins as output
+  pinMode(pin2, OUTPUT);
+  pinMode(pin3, OUTPUT);
+  pinMode(pin4, OUTPUT);
+}
+void loop() {
+  // Turn on and off each pin in sequence with delay
+  togglePin(pin4);
+  togglePin(pin3);
+  togglePin(pin2);
+}
+// Function to toggle a pin on and off with delay
+void togglePin(int pin) {
+  digitalWrite(pin, HIGH);
+  delay(delayTime);
+  digitalWrite(pin, LOW);
+  delay(delayTime);
+}
