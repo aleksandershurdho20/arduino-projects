@@ -18,7 +18,7 @@ void loop() {
   if(flameVal < 1000 ) {
     // fire the alarm and turn led on
     delay(200);
-    tone(buzzer,600,800);
+    tone(buzzer,600,800);gh-f.  
     delay(200);
     digitalWrite(led,HIGH);
 
